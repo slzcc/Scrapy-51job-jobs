@@ -24,6 +24,30 @@ $ docker run --net host --rm -it -e REDIS_DB_HOST=127.0.0.1 -e ELASTICSEARCH_DB_
 ```
 >注意: 这里需要输入的是准确的公司全面，否则会有很多不相干的信息被爬取，如果是职位名称则没任何问题，只要在浏览器当中看到的所有信息都会被爬取下来。
 
+效果:
+```
+$ docker run --net host --rm -it -e REDIS_DB_HOST=127.0.0.1 -e ELASTICSEARCH_DB_SERVER=http://elasticsearch:9200 registry.aliyuncs.com/slzcc/scrapy-51job-jobs:elasticsearch python company_resume_51job/company_name.py
+Please according to the prompt to input, must strictly careful operation in order to avoid waste your how many repair operations.
+Please enter 'http://www.51job.com/' website for company name to crawl, must be the full name, it doesn't matter too much or you will climb to the company requirements.
+Please enter the need to search the company name: 运维
+http://search.51job.com/list/000000,000000,0000,00,9,99,%E8%BF%90%E7%BB%B4,2,2.html
+http://search.51job.com/list/000000,000000,0000,00,9,99,%E8%BF%90%E7%BB%B4,2,3.html
+http://search.51job.com/list/000000,000000,0000,00,9,99,%E8%BF%90%E7%BB%B4,2,4.html
+http://search.51job.com/list/000000,000000,0000,00,9,99,%E8%BF%90%E7%BB%B4,2,5.html
+http://search.51job.com/list/000000,000000,0000,00,9,99,%E8%BF%90%E7%BB%B4,2,6.html
+http://search.51job.com/list/000000,000000,0000,00,9,99,%E8%BF%90%E7%BB%B4,2,7.html
+http://search.51job.com/list/000000,000000,0000,00,9,99,%E8%BF%90%E7%BB%B4,2,8.html
+http://search.51job.com/list/000000,000000,0000,00,9,99,%E8%BF%90%E7%BB%B4,2,9.html
+http://search.51job.com/list/000000,000000,0000,00,9,99,%E8%BF%90%E7%BB%B4,2,10.html
+http://search.51job.com/list/000000,000000,0000,00,9,99,%E8%BF%90%E7%BB%B4,2,11.html
+http://search.51job.com/list/000000,000000,0000,00,9,99,%E8%BF%90%E7%BB%B4,2,12.html
+http://search.51job.com/list/000000,000000,0000,00,9,99,%E8%BF%90%E7%BB%B4,2,13.html
+http://search.51job.com/list/000000,000000,0000,00,9,99,%E8%BF%90%E7%BB%B4,2,14.html
+http://search.51job.com/list/000000,000000,0000,00,9,99,%E8%BF%90%E7%BB%B4,2,15.html
+http://search.51job.com/list/000000,000000,0000,00,9,99,%E8%BF%90%E7%BB%B4,2,16.html
+```
+上图中输入需求即可，如果输入的是一个职业，会列出所有你能看到的公司岗位信息整个爬取一遍。
+
 ## 运行服务
 服务的运行和准备 `URL` 地址并没有直接的关系，如果 Redis 队列中没有 `URL` 地址，则会一直等待。
 ```
