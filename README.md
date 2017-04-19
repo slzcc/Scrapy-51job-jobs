@@ -2,7 +2,7 @@
 
 需要准备的服务:
   * Redis
-  # Elasticsearch
+  * Elasticsearch
 
 ## 内置参数说明
 爬虫已经使用 Docker 封装好，只需要调用所需的环境变量更改服务地址等信息。
@@ -10,6 +10,7 @@ Redis 服务地址
 ```
 REDIS_DB_HOST=127.0.0.1
 REDIS_DB_PORT=6379
+```
 Elasticsearch 服务地址以及 index 名称
 ```
 ELASTICSEARCH_DB_SERVER=http://localhost:9200
