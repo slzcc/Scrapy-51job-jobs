@@ -1,4 +1,4 @@
-# Scarpy 爬取51job 企业岗位信息
+# Scarpy 爬取 51job 企业岗位信息
 
 需要准备的服务:
   * Redis
