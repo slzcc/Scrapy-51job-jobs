@@ -31,5 +31,6 @@ $ docker run --net host -d  -e REDIS_DB_HOST=127.0.0.1 -e ELASTICSEARCH_DB_SERVE
 ```
 ## 效果图
 Redis 效果展示
-
+![Redis Lists up](https://github.com/slzcc/Scrapy-51job-jobs/blob/elasticsearch/template/Redis01.png)
 Elasticsearch 效果展示
+![Elasticsearch Data up](https://github.com/slzcc/Scrapy-51job-jobs/blob/elasticsearch/template/elasticsearch01.png)
