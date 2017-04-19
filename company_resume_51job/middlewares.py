@@ -6,6 +6,8 @@
 # http://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
 from scrapy import signals
+from scrapy.conf import settings
+import random
 
 
 class CompanyResume51JobSpiderMiddleware(object):
@@ -54,3 +56,10 @@ class CompanyResume51JobSpiderMiddleware(object):
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
+
+class UAMiddleware(object):
+    user_agent_list = settings['USER_AGENT_LIST']
+
+    def process_request(self, request, spider):
+        ua = random.choice(self.user_agent_list)
+        request.headers['User-Agent'] = ua

@@ -1,0 +1,6 @@
+scrapy_redis
+elasticsearch
+redis
+Scrapy
+requests
+html2text

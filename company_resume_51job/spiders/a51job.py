@@ -14,9 +14,6 @@ class A51jobSpider(RedisSpider):
         item['position_url'] = response.url
         item['position_name'] = data.xpath('div/div/div/h1/text()').extract()[0]
         item['position_address'] = data.xpath('div/div/div/span[@class="lname"]/text()').extract()[0]
-        # position_salary = []
-        # position_salary.append(data.xpath('div/div/div/strong/text()').extract())
-        # item['position_salary'] = position_salary[0]
         position_salary = data.xpath('div/div/div/strong/text()').extract()
         if position_salary:
             item['position_salary'] = position_salary[0]
