@@ -29,3 +29,7 @@ $ docker run --net host --rm -it -e REDIS_DB_HOST=127.0.0.1 -e ELASTICSEARCH_DB_
 ```
 $ docker run --net host -d  -e REDIS_DB_HOST=127.0.0.1 -e ELASTICSEARCH_DB_SERVER=http://localhost:9200 registry.aliyuncs.com/slzcc/scrapy-51job-jobs:elasticsearch
 ```
+## 效果图
+Redis 效果展示
+
+Elasticsearch 效果展示
