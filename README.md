@@ -1,5 +1,10 @@
 # Scarpy 爬取 51job 企业岗位信息
 
+下载分支代码:
+```
+$ git clone -b elasticsearch https://github.com/slzcc/Scrapy-51job-jobs.git
+```
+
 需要准备的服务:
   * Redis
   * Elasticsearch
