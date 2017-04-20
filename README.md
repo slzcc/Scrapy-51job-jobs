@@ -1,5 +1,7 @@
 # Scarpy 爬取 51job 企业岗位信息
 
+使用代码前请保证您的用途是合法的，此代码虽然开源但是不作用于任何非法渠道使用或者非法盈利场景，不存在侵权!
+
 下载分支代码:
 ```
 $ git clone -b elasticsearch https://github.com/slzcc/Scrapy-51job-jobs.git
