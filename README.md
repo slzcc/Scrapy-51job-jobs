@@ -62,5 +62,8 @@ Redis 效果展示
 ![Redis Lists up](template/Redis01.png)
 Elasticsearch 效果展示
 ![Elasticsearch Data 01 up](template/elasticsearch01.png)
+使用饼图划分，内圈为公司名称，中间圈为岗位名称，外圈为薪资。
 ![Elasticsearch Data 02 up](template/elasticsearch02.png)
+按照饼图的划分后，使用表图进行更细致化的数据划分，如图
 ![Elasticsearch Data 03 up](template/elasticsearch03.png)
+包括 url，发布日期，工作经验，学历等等。
