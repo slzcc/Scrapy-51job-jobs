@@ -35,13 +35,13 @@ DOWNLOAD_DELAY = 1
 ## 准备 URL 地址
 首先需要搜索公司或者职位名称获取 `URL` 爬虫所需地址，这里只需要执行内部方法即可
 ```
-$ docker run --rm -it -e REDIS_DB_HOST=127.0.0.1 -e ELASTICSEARCH_DB_SERVER=http://localhost:9200 registry.aliyuncs.com/slzcc/scrapy-51job-jobs:elasticsearch python company_resume_51job/company_name.py
+$ docker run --rm -it -e REDIS_DB_HOST=127.0.0.1 -e ELASTICSEARCH_DB_SERVER=http://localhost:9200 registry.aliyuncs.com/slzcc/scrapy-51job-jobs:elasticsearch-1.0 python company_resume_51job/company_name.py
 ```
 >注意: 这里需要输入的是准确的公司全名，否则会有很多不相干的信息被爬取，如果是职位名称则没任何问题，只要在浏览器当中看到的所有信息都会被爬取下来。
 
 效果:
 ```
-$ docker run --net host --rm -it -e REDIS_DB_HOST=127.0.0.1 -e ELASTICSEARCH_DB_SERVER=http://elasticsearch:9200 registry.aliyuncs.com/slzcc/scrapy-51job-jobs:elasticsearch python company_resume_51job/company_name.py
+$ docker run --net host --rm -it -e REDIS_DB_HOST=127.0.0.1 -e ELASTICSEARCH_DB_SERVER=http://elasticsearch:9200 registry.aliyuncs.com/slzcc/scrapy-51job-jobs:elasticsearch-1.0 python company_resume_51job/company_name.py
 Please according to the prompt to input, must strictly careful operation in order to avoid waste your how many repair operations.
 Please enter 'http://www.51job.com/' website for company name to crawl, must be the full name, it doesn't matter too much or you will climb to the company requirements.
 Please enter the need to search the company name: 运维
@@ -55,7 +55,7 @@ http://search.51job.com/list/000000,000000,0000,00,9,99,%E8%BF%90%E7%BB%B4,2,4.h
 ## 运行服务
 服务的运行和准备 `URL` 地址并没有直接的关系，如果 Redis 队列中没有 `URL` 地址，则会一直等待。
 ```
-$ docker run --net host -d -e DOWNLOAD_DELAY=0 -e REDIS_DB_HOST=127.0.0.1 -e ELASTICSEARCH_DB_SERVER=http://localhost:9200 -e CONCURRENT_REQUESTS=100 registry.aliyuncs.com/slzcc/scrapy-51job-jobs:elasticsearch
+$ docker run --net host -d -e DOWNLOAD_DELAY=0 -e REDIS_DB_HOST=127.0.0.1 -e ELASTICSEARCH_DB_SERVER=http://localhost:9200 -e CONCURRENT_REQUESTS=100 registry.aliyuncs.com/slzcc/scrapy-51job-jobs:elasticsearch-1.0
 ```
 ## 效果图
 Redis 效果展示
