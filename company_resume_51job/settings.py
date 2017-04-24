@@ -92,7 +92,7 @@ DOWNLOADER_MIDDLEWARES = {
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-DOWNLOAD_DELAY = 1
+DOWNLOAD_DELAY = int(os.getenv('DOWNLOAD_DELAY'))
 
 COOKIES_ENABLED = False
 

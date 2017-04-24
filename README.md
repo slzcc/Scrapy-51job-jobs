@@ -28,6 +28,10 @@ Scrapy 并发数
 ```
 CONCURRENT_REQUESTS = 32
 ```
+Scrapy 每秒请求间隔时间单位 `秒`，默认为 1
+```
+DOWNLOAD_DELAY = 1
+```
 ## 准备 URL 地址
 首先需要搜索公司或者职位名称获取 `URL` 爬虫所需地址，这里只需要执行内部方法即可
 ```
