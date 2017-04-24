@@ -5,9 +5,10 @@ from lxml import html
 import requests
 import urllib.parse
 import redis
+import os
 
-REDIS_HOST = '127.0.0.1'
-REDIS_PORT = 6379
+REDIS_HOST = os.getenv('REDIS_DB_HOST')
+REDIS_PORT = int(os.getenv('REDIS_DB_PORT'))
 
 redis_q = redis.StrictRedis(connection_pool=redis.ConnectionPool(host=REDIS_HOST, port=REDIS_PORT, db=0))
 
