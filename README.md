@@ -24,6 +24,10 @@ ELASTICSEARCH_DB_SERVER=http://localhost:9200
 ELASTICSEARCH_DATA_INDEX=scrapy-51job
 ELASTICSEARCH_DATA_TYPE=item
 ```
+Scrapy 并发数
+```
+CONCURRENT_REQUESTS = 32
+```
 ## 准备 URL 地址
 首先需要搜索公司或者职位名称获取 `URL` 爬虫所需地址，这里只需要执行内部方法即可
 ```
