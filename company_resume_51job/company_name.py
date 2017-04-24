@@ -6,16 +6,26 @@ import requests
 import urllib.parse
 import redis
 import os
+import threading
 
 REDIS_HOST = os.getenv('REDIS_DB_HOST')
 REDIS_PORT = int(os.getenv('REDIS_DB_PORT'))
 
 redis_q = redis.StrictRedis(connection_pool=redis.ConnectionPool(host=REDIS_HOST, port=REDIS_PORT, db=0))
 
+class TaskThread(threading.Thread):
+    def __init__(self, data):
+        threading.Thread.__init__(self)
+        self.Data = data
+
+    def run(self):
+        locks.acquire()
+        locks.release()
 
 def PositionUrl(Html):
     selector = html.fromstring(Html)
     position = selector.xpath('//div[@id="resultList"]/div[@class="el"]')
+    locks = threading.Lock()
     for i in position:
         url = i.xpath('p/span/a/@href')[0]
         redis_q.lpush('51job:start_urls', url)
