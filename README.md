@@ -59,6 +59,8 @@ $ docker run --net host -d -e DOWNLOAD_DELAY=0 -e REDIS_DB_HOST=127.0.0.1 -e ELA
 ```
 ## 效果图
 Redis 效果展示
-![Redis Lists up](https://github.com/slzcc/Scrapy-51job-jobs/blob/elasticsearch/template/Redis01.png)
+![Redis Lists up](template/Redis01.png)
 Elasticsearch 效果展示
-![Elasticsearch Data up](https://github.com/slzcc/Scrapy-51job-jobs/blob/elasticsearch/template/elasticsearch01.png)
+![Elasticsearch Data 01 up](template/elasticsearch01.png)
+![Elasticsearch Data 02 up](template/elasticsearch02.png)
+![Elasticsearch Data 03 up](template/elasticsearch03.png)
