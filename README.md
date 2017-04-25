@@ -60,6 +60,8 @@ $ docker run --rm -it -e REDIS_DB_HOST=127.0.0.1 registry.aliyuncs.com/slzcc/scr
 ```
 此方法是把公司招聘主页的对应公布的招聘信息表进行爬取。
 
+>需要重点注意：Redis Server 对应的必须为 `IP` 如果需要使用 `HOST` 请配合 Docker `--add-host` 使用。
+
 ## 运行服务
 服务的运行和准备 `URL` 地址并没有直接的关系，如果 Redis 队列中没有 `URL` 地址，则会一直等待。
 ```
