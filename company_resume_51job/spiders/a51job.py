@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import scrapy, re, html2text
+import re, html2text, datetime, time
 from scrapy_redis.spiders import RedisSpider
 from company_resume_51job.items import CompanyResume51JobItem
 
@@ -26,10 +26,22 @@ class A51jobSpider(RedisSpider):
         item['company_label'] = "".join(company_label).split()
         item['company_name'] = data.xpath('div/div/div/p/a/text()').extract()[0]
         item['company_recruitment_url'] = data.xpath('div/div/div/p/a/@href').extract()[0]
+
         position_requirements = []
         for i in data.xpath('div[@class="tCompany_main"]/div/div/div/span'):
-            position_requirements.append(i.xpath('text()').extract()[0])
+            label = i.xpath('text()').extract()[0]
+            print(label)
+            if re.findall(r"(.?.?\d+.?)经验",label):
+                item['work_experience'] = re.findall(r"(.?.?\d+.?)经验",label)
+            if re.findall(r"招聘(\d+)", label):
+                item['hiring_number'] = re.findall(r"招聘(\d+)", label)
+            if re.findall(r"(\d+\-\d+)发布",label):
+                ReleaseTime = re.findall(r"(\d+\-\d+)发布",label)[0].split("-")
+                print(int(ReleaseTime[0]),int(ReleaseTime[1]))
+                item['release_time'] = datetime.datetime(time.localtime(time.time())[0], int(ReleaseTime[0]), int(ReleaseTime[1]))
+            position_requirements.append(label)
         item['position_requirements_label'] = position_requirements
+
         jobs_info = []
         for i in html2text.html2text(data.xpath('div[@class="tCompany_main"]/div[@class="tBorderTop_box"]/div[@class="bmsg job_msg inbox"]').extract()[0]):
             jobs_info.append(i.strip())

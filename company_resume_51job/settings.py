@@ -103,9 +103,6 @@ SCHEDULER = "scrapy_redis.scheduler.Scheduler"
 
 DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
 
-# STATS_CLASS = 'scrapy_redis.stats.RedisStatsCollector'
-# STATS_UPDATE_INTERVAL = 0
-
 SCHEDULER_PERSIST = True
 
 SCHEDULER_QUEUE_CLASS = "scrapy_redis.queue.SpiderPriorityQueue"
