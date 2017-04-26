@@ -67,6 +67,7 @@ $ docker run --rm -it -e REDIS_DB_HOST=127.0.0.1 registry.aliyuncs.com/slzcc/scr
 ```
 $ docker run --net host -d -e DOWNLOAD_DELAY=0 -e REDIS_DB_HOST=127.0.0.1 -e ELASTICSEARCH_DB_SERVER=http://localhost:9200 -e CONCURRENT_REQUESTS=100 registry.aliyuncs.com/slzcc/scrapy-51job-jobs:elasticsearch-2.0
 ```
+Elasticsearch 的部分操作请看文档 [Wiki](https://wiki.shileizcc.com/display/python/ik+Mapping+Create) 。
 ## 效果图
 Redis 效果展示
 ![Redis Lists up](template/Redis01.png)
