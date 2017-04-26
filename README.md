@@ -75,6 +75,11 @@ Elasticsearch 效果展示
 ![Elasticsearch Data 01 up](template/elasticsearch01.png)
 使用饼图划分，内圈为公司名称，中间圈为岗位名称，外圈为薪资。
 ![Elasticsearch Data 02 up](template/elasticsearch02.png)
-按照饼图的划分后，使用表图进行更细致化的数据划分，如图
+使用表图进行更细致化的数据划分，包括 岗位名称、薪资、URL、工作经验、招聘人数等等。如图:
 ![Elasticsearch Data 03 up](template/elasticsearch03.png)
-包括 url，发布日期，工作经验，学历等等。
+通常选择公司后 kibana 在展示时都会对，对应的公司名称聚合列出数据。
+![Elasticsearch Data 04 up](template/elasticsearch04.png)
+招聘岗位发布时间。
+![Elasticsearch Data 05 up](template/elasticsearch05.png)
+招聘岗位名称以及对应的发布时间。
+![Elasticsearch Data 06 up](template/elasticsearch06.png)
