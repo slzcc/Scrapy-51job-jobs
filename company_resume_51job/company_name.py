@@ -49,7 +49,8 @@ Request = requests.get(url=urls).content
 
 selector = html.fromstring(Request)
 
-NumberPages = selector.xpath('//div[@class="dw_table"]/div[@class="dw_tlc"]/div[@class="rt"]/text()')[2].split('/ ')[1]
+#NumberPages = selector.xpath('//div[@class="dw_table"]/div[@class="dw_tlc"]/div[@class="rt"]/text()')[2].split('/ ')[1]
+NumberPages = selector.xpath('//div[@class="dw_table"]/div[@class="dw_tlc"]/div[@class="rt"]/text()')[3].split('\xa0/\xa0')[1]
 
 for i in range(0, int(NumberPages)+1):
     urls = 'http://search.51job.com/list/000000,000000,0000,00,9,99,{0},2,{1}.html'.format(Company_name, i)

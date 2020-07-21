@@ -36,7 +36,7 @@ DOWNLOAD_DELAY = 1
 ## 准备 URL 地址 (可选)
 方法一、首先需要搜索公司名称或者职位名称获取 `URL` 爬虫所需地址，这里只需要执行内部方法即可
 ```
-$ docker run --rm -it -e REDIS_DB_HOST=127.0.0.1 -e ELASTICSEARCH_DB_SERVER=http://localhost:9200 registry.aliyuncs.com/slzcc/scrapy-51job-jobs:elasticsearch-2.0 python company_resume_51job/company_name.py
+$ docker run --rm -it -e REDIS_DB_HOST=127.0.0.1 -e ELASTICSEARCH_DB_SERVER=http://localhost:9200 registry.aliyuncs.com/slzcc/scrapy-51job-jobs:elasticsearch-3.0 python company_resume_51job/company_name.py
 ```
 >注意: 这里需要输入的是准确的公司全名，否则会有很多不相干的信息被爬取，如果是职位名称则没任何问题，只要在浏览器当中看到的所有信息都会被爬取下来。
 
@@ -56,7 +56,7 @@ http://search.51job.com/list/000000,000000,0000,00,9,99,%E8%BF%90%E7%BB%B4,2,4.h
 方法二、获取公司公司的招聘主页如地址 `http://jobs.51job.com/all/co2204116.html`:
 执行内部方法输入获取的 URL :
 ```
-$ docker run --rm -it -e REDIS_DB_HOST=127.0.0.1 registry.aliyuncs.com/slzcc/scrapy-51job-jobs:elasticsearch-2.0 python company_resume_51job/company_url.py
+$ docker run --rm -it -e REDIS_DB_HOST=127.0.0.1 registry.aliyuncs.com/slzcc/scrapy-51job-jobs:elasticsearch-3.0 python company_resume_51job/company_url.py
 ```
 此方法是把公司招聘主页的对应公布的招聘信息表进行爬取。
 
@@ -65,7 +65,7 @@ $ docker run --rm -it -e REDIS_DB_HOST=127.0.0.1 registry.aliyuncs.com/slzcc/scr
 ## 运行服务
 服务的运行和准备 `URL` 地址并没有直接的关系，如果 Redis 队列中没有 `URL` 地址，则会一直等待。
 ```
-$ docker run --net host -d -e DOWNLOAD_DELAY=0 -e REDIS_DB_HOST=127.0.0.1 -e ELASTICSEARCH_DB_SERVER=http://localhost:9200 -e CONCURRENT_REQUESTS=100 registry.aliyuncs.com/slzcc/scrapy-51job-jobs:elasticsearch-2.0
+$ docker run --net host -d -e DOWNLOAD_DELAY=0 -e REDIS_DB_HOST=127.0.0.1 -e ELASTICSEARCH_DB_SERVER=http://localhost:9200 -e CONCURRENT_REQUESTS=100 registry.aliyuncs.com/slzcc/scrapy-51job-jobs:elasticsearch-3.0
 ```
 Elasticsearch 的部分操作请看文档 [Wiki](https://wiki.shileizcc.com/display/python/ik+Mapping+Create) 。
 ## 效果图
